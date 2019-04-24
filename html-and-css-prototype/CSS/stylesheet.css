@@ -61,18 +61,18 @@ button{
 	width: 130px;
 	height: 40px;
 	font-weight: bold;
-	font-size: 10px;
-	/*background-color: #EAEAEA;*/
+	font-size: 11px;
 	color: #777;
 }
 span{
 	grid-area: main-content;
 	font-size: 15px;
-	padding-top: 5%;
+	padding-top: 6%;
 	padding-left: 0.5em;
+	color: #777;
 }
 /*Classes*/
-.center-containers {
+.center-containers { /*Just to align/size everything to the middle*/
 	margin: 0px auto;
 	width: 20%;
 }
@@ -108,9 +108,7 @@ span{
 	/*Sizing*/
 	height: 12px;
 	display: flex;
-	border-color: #EAEAEA;
-	border-style: solid;
-	border-width: 1px;
+	border: 1px solid #EAEAEA;
 }
 .container2 {
 	/*Margin and padding*/
@@ -123,9 +121,7 @@ span{
 	grid-template-rows: 2fr 1fr 10%;
 	grid-template-areas:"header" "main-content" "footer";
 	/*Styling*/
-	border-color: #EAEAEA;
-	border-style: solid;
-	border-width: 1px;
+	border: 1px solid #EAEAEA;
 	font-size: 13px;
 }
 /*For the bottom two buttons*/

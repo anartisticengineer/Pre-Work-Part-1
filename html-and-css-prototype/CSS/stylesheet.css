@@ -40,3 +40,127 @@ h1 {
 */
 
 /* Your CSS code goes here */
+p {
+	grid-area: header;
+	color: #777;
+	margin-right: 2em;
+}
+input {
+	width: 115px;
+	height: 50px;
+	grid-area: main-content;
+	text-align: left;
+	padding-left: 1.2em;
+	font-size: 15px;
+	justify-self: start;
+	align-self: bottom;
+	background-color: rgb(255,255,255,0);
+}
+/*For the bottom two buttons (this one should be overriden for the "Give Now" button)*/
+button{
+	width: 130px;
+	height: 40px;
+	font-weight: bold;
+	font-size: 10px;
+	/*background-color: #EAEAEA;*/
+	color: #777;
+}
+span{
+	grid-area: main-content;
+	font-size: 15px;
+	padding-top: 5%;
+	padding-left: 0.5em;
+}
+/*Classes*/
+.center-containers {
+	margin: 0px auto;
+	width: 20%;
+}
+/*Speech Bubble*/
+.speech-bubble {
+	display: flex;
+	position: relative;
+	background: #424242;
+	padding: 1em;
+	color: white;
+	border-radius: 2px;
+	text-align: center;
+	justify-content: center;
+}
+.speech-bubble::after{
+	content: " ";
+	position: absolute;
+	right: 1.5em;
+	top: 100%;
+	width: 0;
+	height: 0;
+	border-top: 10px solid #424242;
+	border-bottom: 5px solid transparent;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+}
+/*3 Containers:
+	The Orange Bar
+	Everything in between (not including the bottom two buttons)
+	The bottom 2 buttons
+*/
+.container1{
+	/*Sizing*/
+	height: 12px;
+	display: flex;
+	border-color: #EAEAEA;
+	border-style: solid;
+	border-width: 1px;
+}
+.container2 {
+	/*Margin and padding*/
+	padding: 1em;
+	/*Sizing of the grid*/
+	height: auto;
+	min-height: 50px;
+	/*setup the grid rows/columns*/
+	display: grid;
+	grid-template-rows: 2fr 1fr 10%;
+	grid-template-areas:"header" "main-content" "footer";
+	/*Styling*/
+	border-color: #EAEAEA;
+	border-style: solid;
+	border-width: 1px;
+	font-size: 13px;
+}
+/*For the bottom two buttons*/
+.container3 {
+	padding-top: 1em;
+	display: flex;
+	justify-content: space-between;
+}
+/*For the buttons and inputs*/
+.thin-border{
+	border-style: solid;
+	border-width: thin;
+	border-radius: 5px;
+}
+/*single-use ids*/
+#give-now-button {
+	grid-area: main-content;
+	width: 115px;
+	height: 50px;
+	font-size: 13px;
+	background-color: #1CBC2C; /*green*/
+	color: white; /*text color*/
+	border: 1px none;
+	border-radius: 5px;
+	justify-self: end;
+	align-self: bottom;
+}
+#orange-bar {
+	height: auto;
+	width: 75%;
+	background: #EF5F3C;
+}
+#why-give {
+	grid-area: footer;
+	padding-top: 0.5em;
+	color: #20A1D4;
+	font-style: italic;
+}

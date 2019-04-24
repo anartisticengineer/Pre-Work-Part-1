@@ -54,7 +54,7 @@ input {
 	font-size: 15px;
 	justify-self: start;
 	align-self: bottom;
-	background-color: rgb(255,255,255,0);
+	background-color: rgb(255,255,255,0); /*To see the dollar sign without blocking the input.*/
 }
 /*For the bottom two buttons (this one should be overriden for the "Give Now" button)*/
 button{
@@ -64,6 +64,7 @@ button{
 	font-size: 11px;
 	color: #777;
 }
+/*For the dollar sign in the input*/
 span{
 	grid-area: main-content;
 	font-size: 15px;
@@ -78,19 +79,21 @@ span{
 }
 /*Speech Bubble*/
 .speech-bubble {
+	width: 100%;
+	padding: 1em 0.5em;
+	border-radius: 3px;
+	text-align: center;
+	font-size: 14px;
+	justify-content: center;
 	display: flex;
 	position: relative;
 	background: #424242;
-	padding: 1em;
-	color: white;
-	border-radius: 2px;
-	text-align: center;
-	justify-content: center;
+	color: #EAEAEA;
 }
-.speech-bubble::after{
+.speech-bubble::before{
 	content: " ";
 	position: absolute;
-	right: 1.5em;
+	right: 15%;
 	top: 100%;
 	width: 0;
 	height: 0;
@@ -105,17 +108,16 @@ span{
 	The bottom 2 buttons
 */
 .container1{
-	/*Sizing*/
+	/*...for the orange bar.*/
 	height: 12px;
 	display: flex;
 	border: 1px solid #EAEAEA;
 }
 .container2 {
-	/*Margin and padding*/
+	/*Sizing and padding*/
 	padding: 1em;
-	/*Sizing of the grid*/
 	height: auto;
-	min-height: 50px;
+	max-height: 300px;
 	/*setup the grid rows/columns*/
 	display: grid;
 	grid-template-rows: 2fr 1fr 10%;
@@ -159,4 +161,7 @@ span{
 	padding-top: 0.5em;
 	color: #20A1D4;
 	font-style: italic;
+}
+#required-amount {
+	padding-right: 0.1em; /*Fixing spacing issues with the strong element in the speech bubble.*/
 }
